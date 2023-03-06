@@ -1,3 +1,4 @@
+"use strict";
 // primitive data types
 // number
 // string
@@ -12,7 +13,7 @@
 // console.log(typeof true);
 // console.log(typeof undefined);
 // console.log(typeof null); // object
-console.log(1 == true); //true
+//console.log(1 == true); //true
 // var a = 1;
 
 // function foo(input) {
@@ -147,17 +148,17 @@ if(a !== undefined){
 
 // class
 
-class Person {
-    constructor(name) {
-        this.name = name;
-    }
+// class Person {
+//     constructor(name) {
+//         this.name = name;
+//     }
 
-    walk() {
-        console.log(this.name + " is walking...");
-    }
-}
+//     walk() {
+//         console.log(this.name + " is walking...");
+//     }
+// }
 
-const p = new Person("nicole");
+// const p = new Person("nicole");
 // p.__proto__.walk = function () {
 //   console.log(this.name + " is walking...");
 // };
@@ -169,7 +170,7 @@ const p = new Person("nicole");
 // };
 //p.walk();
 // console.log(p);
-p2 = new Person("adam");
+// p2 = new Person("adam");
 //p2.walk();
 
 // // constructor function
@@ -204,26 +205,26 @@ p2 = new Person("adam");
 
 //overriding: same method name in child class will over write the method from parent class
 //overloading(NA in js): same method name with different set of argument
-class Employee extends Person {
-    constructor(name, salary) {
-        super(name);
-        this.salary = salary;
-    }
+// class Employee extends Person {
+//     constructor(name, salary) {
+//         super(name);
+//         this.salary = salary;
+//     }
 
-    walk() {
-        console.log("employee", this.name, "is walking...");
-    }
-    work() {
-        console.log(this.name + " is working...");
-    }
-}
+//     walk() {
+//         console.log("employee", this.name, "is walking...");
+//     }
+//     work() {
+//         console.log(this.name + " is working...");
+//     }
+// }
 
-const employee = new Employee("adam", 1000);
+// const employee = new Employee("adam", 1000);
 
-employee.walk(1000); //employee
-employee.work();
-console.log(employee.name);
-console.log(employee.salary);
+// employee.walk(1000); //employee
+// employee.work();
+// console.log(employee.name);
+// console.log(employee.salary);
 
 //prototype chain
 /* 
@@ -235,13 +236,29 @@ class Manager extends Employee {
   prototype method: will be accessed by all the child instance
   static method
 */
+
+//class factory, bluerint
+//factory has a toolbox, prototype
+
+//instance: product
+
+// employee.__proto__.run = function(){
+//   console.log()
+// }
+
+// Employee.prototype.run = function(){
+
+// }
+
+// console.log(Employee.prototype === employee.__proto__)//true
+
 //class constructor function: factory create instance
 //prototype:
 //instance
-employee.__proto__.getPaid = function () {
-    //typeError
-    console.log(this.name, "get paid");
-};
+// employee.__proto__.getPaid = function () {
+//     //typeError
+//     console.log(this.name, "get paid");
+// };
 
 //instance method
 /* employee.getPaid = function(){//typeError
@@ -249,42 +266,42 @@ employee.__proto__.getPaid = function () {
 }
  */
 
-const employee1 = new Employee("Nicole", 2000);
+// const employee1 = new Employee("Nicole", 2000);
 
-console.log(employee1);
-employee1.getPaid(); //reference
+// console.log(employee1);
+// employee1.getPaid(); //reference
 
-//static method
-Employee.meet = function () {
-    console.log("meeting!");
-};
+// //static method
+// Employee.meet = function () {
+//     console.log("meeting!");
+// };
 
-//object literal
+// //object literal
 
-const obj = {};
-//const obj = new Object()
-console.log(obj.hasOwnProperty);
+// const obj = {};
+// //const obj = new Object()
+// console.log(obj.hasOwnProperty);
 
 // instance and class
 
-console.log(employee1.hasOwnProperty);
-//employee1 => Employee class => Person class => Object class => hasOwnProperty
+// console.log(employee1.hasOwnProperty);
+// //employee1 => Employee class => Person class => Object class => hasOwnProperty
 
-console.log(typeof typeof obj); //string
+// console.log(typeof typeof obj); //string
 
-console.log(employee1 instanceof Employee); //true
+// console.log(employee1 instanceof Employee); //true
 
-console.log(obj instanceof Employee); //false
+// console.log(obj instanceof Employee); //false
 
-//console.log(typeof array);//object
+// //console.log(typeof array);//object
 
-console.log(typeof function () {}); //function
+// console.log(typeof function () {}); //function
 
-const foo = function () {};
-foo.a = 1;
-console.log(foo.a);
-console.log(foo instanceof Object);
-console.log(foo instanceof Function);
+// const foo = function () {};
+// foo.a = 1;
+// console.log(foo.a);
+// console.log(foo instanceof Object);
+// console.log(foo instanceof Function);
 
 /* 
 non-primitive type: passed by reference
@@ -295,9 +312,9 @@ non-primitive type: passed by reference
 
 /* const array1 = new Array();
 console.log(array1) */
-const array = [1, 2, 3];
-console.log(array);
-console.log(array[1]);
+// const array = [1, 2, 3];
+// console.log(array);
+// console.log(array[1]);
 /* 
   array method: 
     forEach, map, filter, find,
@@ -321,10 +338,10 @@ console.log(array[1]);
   how: loop through the elements of the array and call the callback with arg of each element
 */
 // forEach
-const returnedValue = array.forEach(function (element) {
-    console.log(element);
-});
-console.log(returnedValue);
+// const returnedValue = array.forEach(function (element) {
+//     console.log(element);
+// });
+// console.log(returnedValue);
 
 /* 
   what: 
@@ -335,11 +352,11 @@ console.log(returnedValue);
   how: 
 */
 //map
-const returnedValue1 = array.map(function (element) {
-    console.log(element);
-    return element + 1;
-});
-console.log(returnedValue1 === array); //false
+// const returnedValue1 = array.map(function (element) {
+//     console.log(element);
+//     return element + 1;
+// });
+// console.log(returnedValue1 === array); //false
 
 /* 
   what: 
@@ -350,14 +367,14 @@ console.log(returnedValue1 === array); //false
   how:
 */
 //filter
-const returnedValue2 = array.filter(function (element) {
-    if (element % 2 === 0) {
-        return true;
-    } else {
-        return false;
-    }
-});
-console.log(returnedValue2); //length: 1, [2]
+// const returnedValue2 = array.filter(function (element) {
+//     if (element % 2 === 0) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// });
+// console.log(returnedValue2); //length: 1, [2]
 
 /* Array.prototype.forEach = function(){
   console.log("substitute foreach")
@@ -377,16 +394,16 @@ console.log(returnedValue2); //length: 1, [2]
 */
 
 //this: is the instance who calls the function
-Array.prototype.myForEach = function (callback) {
-    const array = this;
-    for (let i = 0; i < array.length; i++) {
-        callback(array[i], i, array);
-    }
-};
+// Array.prototype.myForEach = function (callback) {
+//     const array = this;
+//     for (let i = 0; i < array.length; i++) {
+//         callback(array[i], i, array);
+//     }
+// };
 
-array.myForEach(function (element) {
-    console.log(element);
-});
+// array.myForEach(function (element) {
+//     console.log(element);
+// });
 
 //sum up all the element of the array, 6
 
@@ -398,28 +415,316 @@ array.myForEach(function (element) {
   how: loop each element of the array and call the callback with argument of the element and reduce into a result
 */
 
-let sum = 0;
-for (let i = 0; i < array.length; i++) {
-    sum = sum + array[i];
+// let sum = 0;
+// for (let i = 0; i < array.length; i++) {
+//     sum = sum + array[i];
+// }
+// console.log(sum); //6
+
+// sum = array.reduce(function (accumulator, current) {
+//     return accumulator + current;
+// }, 0);
+
+// console.log(sum);
+
+// Array.prototype.myReduce = function (callback, initialValue) {
+//     let accumulator = initialValue;
+//     for (let i = 0; i < this.length; i++) {
+//         const currentValue = this[i];
+//         accumulator = callback(accumulator, currentValue, i, this);
+//     }
+//     return accumulator;
+// };
+// sum = array.myReduce(function (accumulator, current) {
+//     return accumulator + current;
+// }, 0);
+
+// console.log(sum);
+
+//map, filter, find, concat, push, pop, slice, splice, some, every, reverse
+
+//find similar filter,
+//concat, [1] [2,3]
+//push: change length, add to the end
+//slice: return a new array, create new array, push to the new array
+//splice: in place, args(index, number of element to be removed, element you want to add to the array)
+//some: callback(element) return boolean,
+//every: callback(element) return boolean,
+
+// function foo() {
+//     console.log(arguments); //
+// }
+
+// foo(1, 2, 3, 4, 5);
+//push pop
+//splice: remove element in place, add element in place
+
+// const arr = [1, 2, 3];
+
+/* arr.splice(1,1); // remove 1 element from index 1
+console.log("arr after removing", arr) */
+
+/* arr.splice(1,0, 8)
+
+console.log("arr after adding", arr);//[1,8,2,3] */
+
+//arr.splice(1,1,8,9);
+
+//console.log(arr)//[1,8,9,3]
+
+/* 
+  [1,2,3,4]
+  arr.splice(1,1)
+  [1,3,4]
+*/
+// Array.prototype.mySplice = function () {
+//     arguments = Array.from(arguments);
+//     const index = arguments[0];
+//     const deleteNum = arguments[1];
+//     const newElements = arguments.slice(2);
+//     let tempArr; //spread operator
+//     if (deleteNum !== undefined) {
+
+//         tempArr = [...this.slice(0, index), ...this.slice(index + deleteNum)];
+//         //tempArr = [...[1], ...[3]] //[1,3]
+//     }
+
+//     if (newElements.length !== 0) {
+//         tempArr = [
+//             ...tempArr.slice(0, index),
+//             ...newElements,
+//             ...tempArr.slice(index),
+//         ];
+//     }
+
+//     this.length = tempArr.length;
+//     tempArr.forEach((item, index) => {
+//         this[index] = item;
+//     });
+// };
+// //[1,2,3]
+// console.log("before", arr);
+// arr.mySplice(1, 1, 4); //[1,4,3]
+// console.log("after", arr);
+
+//const arr = [1,2,3];
+
+// for(let i = 0; i < arr.length; i++){
+//   console.log(arr[i])
+// }
+
+// for(let key in arr){
+//   console.log(key, arr[key])
+// }
+
+//for of loop
+// for(let value of arr){
+//   console.log(value)
+// }
+
+// const obj = {name:"adam", age:18, key:true};
+
+/* for(let key in obj){
+  console.log(key, obj[key])
+} */
+
+//dot notation
+//bracket notation
+
+// const name = "key";
+/* 
+console.log(obj.name);//adam
+
+console.log(obj[name]);//true
+
+console.log(obj["key"])//true */
+
+//Object.keys: arg: obj you want to loop, return arr
+//keys a prototype method, static method?
+
+// Object.keys(obj).forEach(item=>{
+//   console.log(item)
+// })
+
+// Object.values(obj).forEach(item=>{
+//   console.log(item)
+// })
+
+//entries: return array of array of length 2, 2 dimensional array
+/* console.log(Object.entries(obj))
+Object.entries(obj).forEach(item=>{
+  console.log(item[0], item[1])
+}) */
+
+/* 
+  object: hashmap, O(1)
+  array: ordered list, filter, find O(n)
+*/
+
+//browser,
+//ecmascript: standard of syntax
+//ES5: var
+//ES6: let const, spread operator, rest operator, detructuring, class, promise, arrow function, template literal
+
+//spread operator: copy array, object
+// const arr = [1,2,3];
+// const arr1 = arr;
+// console.log(arr === arr1);//true
+// arr[1] = 0;
+// console.log(arr, arr1)//arr: [1,0,3], arr1: [1,0,3]
+// console.log(arr === arr1); //true;
+/* const arr2 = [1,2,3];
+
+
+console.log(arr, arr2); //false */
+/* const arr2 = []
+for(let i = 0; i < arr.length; i++){
+  arr2.push(arr[i])
 }
-console.log(sum); //6
+console.log(arr === arr2);//false */
 
-sum = array.reduce(function (accumulator, current) {
-    return accumulator + current;
-}, 0);
+/* const arr2  = [...arr];
+console.log(arr === arr2); //false */
 
-console.log(sum);
+/* const obj = {name: "adam", age:18};
+const obj1 = {}
+for(let key in obj){
+  obj1[key] = obj[key]
+}
+console.log(obj === obj1); //false */
 
-Array.prototype.myReduce = function (callback, initialValue) {
-    let accumulator = initialValue;
-    for (let i = 0; i < this.length; i++) {
-        const currentValue = this[i];
-        accumulator = callback(accumulator, currentValue, i, this);
-    }
-    return accumulator;
+// const obj = {name: "adam", age:18};
+// const obj1 = {...obj};
+
+// console.log(obj, obj1); //false
+
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+// //const arr3 = [arr1, arr2]; //length:2, 2 dimensional array
+// const arr3 = [7, ...arr1, 0, ...arr2, 9, 8]; //[7,1,2,3,0,4,5,6,9,8]
+
+// const obj = { name: "adam", age: 18 };
+
+// const obj1 = { ...obj, name: "Nicole" }; //2 {name:"Nicole", age:18}
+// console.log(obj1);
+
+// const arr = [
+//   1,
+//   [2,3],
+//   4
+// ]
+/* 
+//shallow copy
+
+const arr1 = [...arr];
+
+console.log(arr === arr1);//false
+console.log(arr[1] === arr1[1])//true
+
+arr1[1] = [...arr[1]];
+console.log(arr[1] === arr1[1])//false
+
+
+const obj = {name:"adam", age:18, item:{car:1}};
+
+const obj1 = {...obj};
+
+console.log(obj === obj1); //false
+console.log(obj.item === obj1.item);//true */
+
+// destructuring: syntax sugar for declaring varibles and initialize them with value of corresponding property in an object
+
+// const obj = { name: "adam", item: { car: 1 } };
+
+// const name = "Nicole";
+// const {
+//     name: name1,
+//     age = 20,
+//     item: { car },
+// } = obj;
+
+// /* const name = obj.name;
+// const age = obj.age; */
+
+// console.log(name1, age, car); //"adam", 20, 1
+
+// const arr = [1, 2, 3, [4, 5]];
+// const [,,,[first, second]] = arr;
+
+// console.log(first,second); //4,5
+
+/* //destruturing
+let [...arr2]= arr */
+
+//rest operator: collecting arguments of a function into an array
+
+//hoisted
+
+//var hoist declaration, not initilization
+
+// foo(1,2,3);
+// function foo(a,...args){
+//   console.log(args); [2,3]
+// }
+
+// const foo = (...args) => {
+//     console.log(args);
+// };
+
+// //this keyword
+
+// const obj = {
+//     name: "adam",
+//     age: 18,
+//     walk: function () {
+//       console.log(this);// obj
+//         const innerFunction = () => {
+//           console.log(this)//obj
+//         };
+//         innerFunction();
+//     },
+// };
+// // regular function: this refers to the object that calls the function
+// // arrow function: this is from the lexical scope of the function
+// obj.walk(); //adam is walking
+
+// const obj1 = {
+//     name: "Nicole",
+//     age: 20,
+//     walk: obj.walk,
+// };
+
+// obj1.walk(); //Nicole
+
+// const obj2 = {
+//   name: "adam",
+//   age: 18,
+//   walk:() => {
+//     console.log(this)//window object
+//   }
+// };
+
+// obj2.walk();//undefined
+
+//for while if try catch
+
+const obj = {
+    name: "adam",
+    age: 18,
+    walk:  () => {
+        console.log(this); //1, undefined/window
+        const innerFunction = () => {
+            console.log(this); //2, undefined/window
+            const innerFunction2 = () => {
+                console.log(this); //3,undefined/window
+            };
+            innerFunction2();
+        };
+
+        innerFunction();
+    },
 };
-sum = array.myReduce(function (accumulator, current) {
-    return accumulator + current;
-}, 0);
 
-console.log(sum);
+obj.walk();
+
+// foo(1,2,3)
