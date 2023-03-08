@@ -281,5 +281,3 @@
 //   .then((values) => {
 //     console.log(values);
 //   });
-
-class myPromise {}
