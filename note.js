@@ -38,3 +38,20 @@
 // Event Bubbling
 // target is the element that triggered the event
 // currentTarget is the element that has the handler on it
+
+/*
+npx
+package.json/package-lock.json
+JSX
+setState is async
+
+webpack
+
+babel
+
+virtual DOM
+
+synthetic event
+
+props drilling/state lifting
+*/
