@@ -49,9 +49,15 @@ webpack
 
 babel
 
-virtual DOM
+virtual DOM - copy of the real DOM. When a component needs to update, React will first do the updates in virtual DOM (diffing algorithm, the process is called reconciliation), and then reflect those changes to the real DOM, because the real DOM manipulation is much more expensive to do.
 
 synthetic event
 
 props drilling/state lifting
+
+ways to trigger component re-render;
+1. change state/props
+2. forceUpdate() // avoid using
+3. parent re-render
+4. shouldComponentUpdate()
 */
