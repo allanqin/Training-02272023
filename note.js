@@ -60,4 +60,6 @@ ways to trigger component re-render;
 2. forceUpdate() // avoid using
 3. parent re-render
 4. shouldComponentUpdate()
+
+HOC - higher order component
 */

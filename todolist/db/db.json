@@ -1,20 +1,19 @@
 {
   "todos": [
     {
-      "content": "sdsd",
+      "content": "1",
+      "completed": false,
       "id": 1
     },
     {
-      "content": "sdsd",
+      "content": "1",
+      "completed": false,
       "id": 2
     },
     {
-      "content": "sdsdsd",
+      "content": "2",
+      "completed": false,
       "id": 3
-    },
-    {
-      "content": "sdsdsdd",
-      "id": 4
     }
   ]
 }
