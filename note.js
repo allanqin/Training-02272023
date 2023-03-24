@@ -62,4 +62,12 @@ ways to trigger component re-render;
 4. shouldComponentUpdate()
 
 HOC - higher order component
+
+useState
+useEffect
+useRef
+useCallback
+useMemo
+
+hoc vs custom hooks
 */
