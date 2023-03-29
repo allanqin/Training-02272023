@@ -45,9 +45,12 @@ package.json/package-lock.json
 JSX
 setState is async
 
-webpack
+webpack - bundler
+JS module
+Common JS
+System JS
 
-babel
+babel - transpiler
 
 virtual DOM - copy of the real DOM. When a component needs to update, React will first do the updates in virtual DOM (diffing algorithm, the process is called reconciliation), and then reflect those changes to the real DOM, because the real DOM manipulation is much more expensive to do.
 
