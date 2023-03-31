@@ -6,7 +6,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./Home/Home";
-import "./index.scss;";
+import "./index.scss";
 
 class App extends React.Component {
   render() {
