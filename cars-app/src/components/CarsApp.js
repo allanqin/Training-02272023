@@ -1,5 +1,7 @@
 import React from "react";
+import { CounterContext } from "../App";
 import Car from "./Car";
+import CounterApp from "./CounterApp";
 import SellButton from "./SellButton";
 
 // uuid: universal unique id
@@ -18,6 +20,7 @@ useCallback
 */
 
 class CarsApp extends React.Component {
+  
   state = {
     cars: [
       {
@@ -83,7 +86,7 @@ class CarsApp extends React.Component {
     // this.state.cars[index].quantity--;
     // this.setState(this.state);
   };
-
+ 
   render() {
     return (
       <>
@@ -100,6 +103,9 @@ class CarsApp extends React.Component {
               carData={car}
             />
           ))}
+        </div>
+        <div>
+          <CounterApp/>
         </div>
       </>
     );
