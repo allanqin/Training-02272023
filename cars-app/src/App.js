@@ -5,8 +5,10 @@ import { useState } from "react";
 import { createContext } from "react";
 import { CounterContext } from "./CounterContext";
 
-import { store } from "./redux/redux";
+//import { store } from "./redux/redux";
 import { Provider } from "react-redux";
+import store from "./redux/store"
+
 
 /* 
   context API:
@@ -24,6 +26,8 @@ import { Provider } from "react-redux";
       Provider(context API), useSelector(reading,subscribe), useDispatch(write, store.dispatch), 
       connect (read write): function (mapStateToProps, mapDispatchToProps) return HOC 
     view action reducer store
+
+    Redux toolkit
 */
 
 function App() {
