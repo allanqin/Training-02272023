@@ -3,11 +3,11 @@ import Header from "../Header/Header";
 
 class Layout extends React.Component {
   render() {
-    const { handleChangeActivePage } = this.props;
+    // const { handleChangeActivePage } = this.props;
     return (
       <>
         <header>
-          <Header handleChangeActivePage={handleChangeActivePage} />
+          <Header />
         </header>
         <main className="content">{this.props.children}</main>
       </>
