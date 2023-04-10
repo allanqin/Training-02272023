@@ -21,7 +21,7 @@ router.post("/", (req, res) => {
 
 router.delete("/", (req, res) => {
   const bookId = req.body["id"];
-  const index = wishlist.find((book) => {
+  const index = wishlist.findIndex((book) => {
     return book.id === bookId;
   });
   if (index) {
