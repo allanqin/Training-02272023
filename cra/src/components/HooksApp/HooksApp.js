@@ -6,6 +6,19 @@ import React, {
   useMemo,
 } from "react";
 
+/* 
+  state management(this.state, useState):
+    unidirectional dataflow, from parent child, props, callback
+    props drilling, state lift()
+
+  global state management: context API, Redux(3rd party library)
+    
+
+
+
+
+*/
+
 /*
 component 1 -> counter 0
 click alert button
