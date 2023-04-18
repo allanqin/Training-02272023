@@ -9,6 +9,7 @@ export const searchbook = createAsyncThunk(
         const response = await fetch(
             `https://www.googleapis.com/books/v1/volumes?q=${keyword}&startIndex=${startIndex}&maxResults=${itemsPerPage}`
         ).then((res) => res.json());
+        console.log(response.totalItems, keyword, startIndex, itemsPerPage)
         return response;
     }
 );
@@ -22,6 +23,7 @@ export const switchPage = createAsyncThunk(
         const response = await fetch(
             `https://www.googleapis.com/books/v1/volumes?q=${keyword}&startIndex=${startIndex}&maxResults=${itemsPerPage}`
         ).then((res) => res.json());
+        console.log(response.totalItems, keyword, startIndex, itemsPerPage)
         return response;
     }
 );

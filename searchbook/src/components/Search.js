@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Booklist from "./Booklist";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -8,6 +8,11 @@ import {
 } from "../redux/slices/searchSlice";
 import { addBook } from "../redux/slices/wishlistSlice";
 
+import { debounce, throttle } from "lodash";
+
+let prevFoo;
+
+
 const Search = () => {
     const keyword = useSelector((state) => state.searchSlice.keyword);
     const isLoading = useSelector((state) => state.searchSlice.isLoading);
@@ -15,6 +20,28 @@ const Search = () => {
     const totalPages = useSelector((state) => state.searchSlice.totalPages);
     const dispatch = useDispatch();
     const list = useSelector((state) => state.searchSlice.list);
+    //useRef, useCallback
+
+    //const debouncedSearchbook = debounce(()=>{dispatch(searchbook())}, 1000);
+
+    const foo = () => {
+
+    }
+    console.log(foo === prevFoo); //false, false
+    prevFoo = foo;
+    
+    const memoizedDebouncedSearchbook = useCallback(
+            debounce(() => {
+                dispatch(searchbook());
+            }, 1000),
+        [dispatch]
+    );
+
+    useEffect(() => {
+        console.log("test");
+        memoizedDebouncedSearchbook();
+    }, [keyword, memoizedDebouncedSearchbook]);
+
     const handleChange = (e) => {
         dispatch(setKeyword(e.target.value));
     };
