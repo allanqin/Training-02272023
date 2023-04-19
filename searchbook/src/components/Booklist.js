@@ -62,7 +62,7 @@ const Booklist = ({ list = [], onClickBook , onClickPrev, onClickNext, currentPa
                     );
                 })}
             </ul>
-            <div><button onClick={onClickPrev}>prev</button>{currentPage}/{totalPages}<button onClick={onClickNext}>next</button></div>
+            <div className="pagination-container"><button onClick={onClickPrev}>prev</button>{currentPage}/{totalPages}<button onClick={onClickNext}>next</button></div>
         </div>
     );
 };

@@ -27,19 +27,21 @@ const Search = () => {
     const foo = () => {
 
     }
-    console.log(foo === prevFoo); //false, false
     prevFoo = foo;
     
     const memoizedDebouncedSearchbook = useCallback(
             debounce(() => {
+                console.log("dispatch", performance.now())
                 dispatch(searchbook());
             }, 1000),
         [dispatch]
     );
 
     useEffect(() => {
-        console.log("test");
+        if(keyword.trim() === "") return
+        console.log("keyword", keyword, performance.now())
         memoizedDebouncedSearchbook();
+        //dispatch(searchbook());
     }, [keyword, memoizedDebouncedSearchbook]);
 
     const handleChange = (e) => {
@@ -67,7 +69,7 @@ const Search = () => {
                 <button onClick={handleSubmit}>Submit</button>
             </div>
             {isLoading ? (
-                <span className="loader"></span>
+                <span className="loader" data-testid="loader"></span>
             ) : (
                 <Booklist
                     onClickBook={handleClickBook}

@@ -9,7 +9,7 @@ export const searchbook = createAsyncThunk(
         const response = await fetch(
             `https://www.googleapis.com/books/v1/volumes?q=${keyword}&startIndex=${startIndex}&maxResults=${itemsPerPage}`
         ).then((res) => res.json());
-        console.log(response.totalItems, keyword, startIndex, itemsPerPage)
+        console.log("response", response, thunkAPI.getState())
         return response;
     }
 );
@@ -23,7 +23,6 @@ export const switchPage = createAsyncThunk(
         const response = await fetch(
             `https://www.googleapis.com/books/v1/volumes?q=${keyword}&startIndex=${startIndex}&maxResults=${itemsPerPage}`
         ).then((res) => res.json());
-        console.log(response.totalItems, keyword, startIndex, itemsPerPage)
         return response;
     }
 );
@@ -49,6 +48,7 @@ export const searchSlice = createSlice({
                 state.isLoading = true;
             })
             .addCase(searchbook.fulfilled, (state, action) => {
+                console.log("fulfilled", action.payload)
                 state.isLoading = false;
                 state.totalPages = Math.ceil(action.payload.totalItems / state.itemsPerPage)
                 state.list = action.payload.items;
@@ -63,7 +63,6 @@ export const searchSlice = createSlice({
                 state.isLoading = false;
                 state.totalPages = Math.ceil(action.payload.totalItems / state.itemsPerPage)
                 state.list = action.payload.items;
-                console.log("newPage",action.meta.arg)
                 state.currentPage = action.meta.arg;//newPage
             })
             .addCase(switchPage.rejected, (state, action) => {
