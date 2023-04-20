@@ -95,20 +95,18 @@ describe("search component", () => {
         const placeHolderEl = screen.getByText("Nothing here");
         expect(placeHolderEl).toBeInTheDocument();
         const inputEl = screen.getByRole("textbox");
+        expect(fetch).toHaveBeenCalledTimes(0);
         fireEvent.change(inputEl, { target: { value: "ab" } });
         expect(inputEl).toHaveValue("ab");
-        await waitFor(() => {}, {
-            timeout: 200,
-        });
+        
         liEls = screen.queryAllByRole("listitem");
         expect(liEls).toHaveLength(0);
-        /* liEls = await screen.findAllByRole("listitem");
-        expect(liEls).toHaveLength(2); */
 
         const submitBtnEl = screen.getByText("Submit");
         fireEvent.click(submitBtnEl);
         liEls = await screen.findAllByRole("listitem"); //what makes code async, promise, async await, settimeout
         expect(liEls).toHaveLength(2);
+        expect(fetch).toHaveBeenCalledTimes(1);
     });
 
     test("loader should show up when the data is loading after clicking submit button", async () => {
